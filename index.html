@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jared's Devsoc App!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="overlay-box">welcome!</div>
+
+    <div id="transition-overlay"></div>
+
+    <div class="row g-0" style="height: 100vh;">
+        <a href="work.html" class="col-md-6 text-decoration-none">
+            <div class="leftside">
+                <p class="text">WORK</p>
+                <p class="text-other">Some of the boring stuff related to my studies and career</p>
+            </div>
+        </a>
+  
+        <a href="play.html" class="col-md-6 text-decoration-none">
+            <div class="rightside">
+                <p class="text">PLAY</p>
+                <p class="text-other">The more interesting and cool stuff about me!</p>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            e.preventDefault(); 
+            const targetUrl = this.getAttribute('href');
+            const overlay = document.getElementById('transition-overlay');
+
+
+            if (this.querySelector('.leftside')) {
+                overlay.style.backgroundColor = '#b00a2d'; 
+            } else if (this.querySelector('.rightside')) {
+                overlay.style.backgroundColor = '#231f20'; 
+            }
+
+            void overlay.offsetWidth;
+
+            setTimeout(() => {window.location.href = targetUrl; }, 500); });
+        });
+    </script>
+
+
+</body>
+</html>
